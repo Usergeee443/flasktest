@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Mening profilim</h1>
+<div class="profile-info">
+    <h2>{{ session['username'] }}</h2>
+</div>
+
+<h2>Mening e'lonlarim</h2>
+<div class="ads-grid">
+    {% for ad in ads %}
+    <div class="ad-card">
+        <h3>{{ ad.title }}</h3>
+        <p class="price">{{ ad.price }} so'm</p>
+        <p class="description">{{ ad.description }}</p>
+        <p class="contact">Tel: {{ ad.phone_number }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

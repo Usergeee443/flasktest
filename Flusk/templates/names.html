@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismlar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ismlar Ro'yxati</h1>
+        <ul>
+            {% for name in names %}
+                <li>{{ name['name'] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('home') }}">Yangi ism qo'shish</a>
+    </div>
+</body>
+</html>

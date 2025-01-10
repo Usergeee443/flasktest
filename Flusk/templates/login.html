@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-form">
+    <h1>Tizimga kirish</h1>
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Foydalanuvchi nomi" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Parol" required>
+        </div>
+        <button type="submit">Kirish</button>
+    </form>
+    <p>Akkountingiz yo'qmi? <a href="{{ url_for('register') }}">Ro'yxatdan o'ting</a></p>
+</div>
+{% endblock %}

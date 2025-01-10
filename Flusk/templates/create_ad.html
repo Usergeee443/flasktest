@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="create-ad-form">
+    <h1>Yangi e'lon yaratish</h1>
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" name="title" placeholder="E'lon sarlavhasi" required>
+        </div>
+        <div class="form-group">
+            <input type="number" name="price" placeholder="Narxi" required>
+        </div>
+        <div class="form-group">
+            <textarea name="description" placeholder="Tavsif" required></textarea>
+        </div>
+        <div class="form-group">
+            <input type="tel" name="phone_number" placeholder="Telefon raqam" required>
+        </div>
+        <button type="submit">E'lonni yaratish</button>
+    </form>
+</div>
+{% endblock %}

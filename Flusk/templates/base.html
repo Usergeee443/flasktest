@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}E'lonlar Sayti{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">E'lonlar</a>
+            <div class="nav-links">
+                {% if 'user_id' in session %}
+                    <a href="{{ url_for('create_ad') }}">E'lon yaratish</a>
+                    <a href="{{ url_for('profile') }}">Profil</a>
+                    <a href="{{ url_for('logout') }}">Chiqish</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Kirish</a>
+                    <a href="{{ url_for('register') }}">Ro'yxatdan o'tish</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

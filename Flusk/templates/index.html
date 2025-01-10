@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>E'lonlar</h1>
+<div class="ads-grid">
+    {% for ad in ads %}
+    <div class="ad-card">
+        <h2>{{ ad.title }}</h2>
+        <p class="price">{{ ad.price }} so'm</p>
+        <p class="description">{{ ad.description }}</p>
+        <p class="contact">Tel: {{ ad.phone_number }}</p>
+        <p class="author">E'lon muallifi: {{ ad.username }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
